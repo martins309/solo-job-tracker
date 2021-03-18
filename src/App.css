@@ -40,3 +40,8 @@
 ul {
   list-style-type: none;
 }
+
+.buttons {
+  height: 25px;
+  width: 40px;
+}
