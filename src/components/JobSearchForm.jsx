@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import SearchCardList from './SearchCardList';
+import SearchCardList from './SearchDetails';
+import { Route, Link} from 'react-router-dom'
 
 
 
@@ -27,30 +28,32 @@ const JobSearchForm = () => {
 
    
         return (
-            <>
-                    <div>
-                        <form onSubmit={_handleSubmit}>
-                            <label>
-                                <input 
-                                name="searchQuery"
-                                placeholder="Enter a language"
-                                value={search}
-                                type="text"
-                                onChange={_onChange}
-                                />
-                            </label>
-                                <button type="submit">Search</button>
-                        </form>
-                    </div>
-                        <ul>
-                            {jobList.map((job, index) => {
-                                return (
-                                    <li key={index}>
-                                        {job.title}
-                                    </li>
-                                );
-                            })}
-                        </ul>
+        <>
+                <div>
+                    <form onSubmit={_handleSubmit}>
+                        <label>
+                            <input 
+                            name="searchQuery"
+                            placeholder="Enter a language"
+                            value={search}
+                            type="text"
+                            onChange={_onChange}
+                            />
+                        </label>
+                            <button type="submit">Search</button>
+                    </form>
+                </div>
+                <Route exact path='/'>
+                    <ul>
+                        {jobList.map((job, index) => {
+                            return (
+                                <li key={index}>
+                                   <Link to ={`/search${job.id}`}>{job.title}</Link>
+                                </li>
+                            );
+                        })}
+                    </ul>
+                </Route>
             </>
         )
     }
