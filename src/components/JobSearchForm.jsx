@@ -7,7 +7,6 @@ const JobSearchForm = ({handleJobList}) => {
    
     const _handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("Button press!")
         const searchData  = await fetch(`http://127.0.0.1:3001/search/?url=https://jobs.github.com/positions.json?description=${search}`, {
             method: 'Get',
             headers: { 'Content-Type': 'application/json'}
@@ -18,6 +17,7 @@ const JobSearchForm = ({handleJobList}) => {
         handleJobList(searchData);
     }
 
+   
 
     const _onChange = (e) => {
         setSearch(e.target.value)

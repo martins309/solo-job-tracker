@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 const JobList = ({jobList}) => {
     return (
         <>
-            <h1>This is the Job list</h1>
             <ul>
                 {jobList.map((job, index) => {
                     return (
