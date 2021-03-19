@@ -24,7 +24,7 @@ const handleJobList = (status) => {
           <JobSearchForm  handleJobList={handleJobList} />  
           <JobList jobList={jobList}/>  
         </Route>
-        <Route path='/location/:id'>
+        <Route path='/:id'>
           <SearchDetails jobList={jobList} />
         </Route>
       </Router>

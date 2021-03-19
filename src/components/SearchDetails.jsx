@@ -5,8 +5,11 @@ const SearchDetails = ({ jobList }) => {
     const { id } = useParams();
     const history = useHistory();
     const job = jobList.find((job) => {
-        return job.id === id ? job : null;
+        console.log("this is the job:", jobList);
+        return job.id === id ? job : "not found";
+        
     });
+
 
     return (
         <div>
