@@ -4,15 +4,15 @@ describe('Getting a Location', () => {
 
         cy.visit('http://localhost:3002');
 
-        cy.get('[data-testid="Location"]')
-            .type("New Location");
+        cy.get('[data-testid="Job"]')
+            .type("New Job");
         
         cy.get('[data-testid="sendButton"]')
             .click();
 
-        cy.get('[data-testid="Location"]')
+        cy.get('[data-testid="Job"]')
             .should('have.value', '');
 
-        cy.contains('New Location');
+        cy.contains('New Job');
     });
 });

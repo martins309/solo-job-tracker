@@ -12,13 +12,13 @@ describe('<JobSearchForm />', () => {
             ({ getByTestId } = render(<JobSearchForm />));
 
             await userEvent.type(
-                getByTestId('Location'),
-                'New Location',
+                getByTestId('Job'),
+                'New Job',
             );
             userEvent.click(getByTestId('sendButton'));
         });
         it('clears the text field', () => {
-            expect(getByTestId('Location').value.toEqual(''));
+            expect(getByTestId('Job').value.toEqual(''));
         })
     })
 })

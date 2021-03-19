@@ -34,7 +34,7 @@ const JobSearchForm = ({handleJobList}) => {
                 <div>
                     <form onSubmit={_handleSubmit}>
                         <input 
-                        name="searchQuery"
+                        type="text"
                         placeholder="Enter a language"
                         value={search}
                         type="text"
@@ -42,7 +42,8 @@ const JobSearchForm = ({handleJobList}) => {
                         />
                         <input 
                         type="text"
-                        data-testid="location"
+                        placeholder="Enter a Location"
+                        value={location}
                         onChange={_handleLocation}
                         />
                         <button type="submit">Search</button>
