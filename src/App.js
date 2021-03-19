@@ -21,7 +21,7 @@ const handleJobList = (status) => {
       <h1>Welcome to job.fetch()</h1>
       <Router>
         <Route exact path='/'>
-          <JobSearchForm  handleJobList={handleJobList} />  
+          <JobSearchForm  />  
           <JobList jobList={jobList}/>  
         </Route>
         <Route path='/:id'>
