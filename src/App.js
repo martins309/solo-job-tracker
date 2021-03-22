@@ -6,9 +6,12 @@ import { useState } from 'react';
 import JobList from './components/JobList';
 
 
+
+
 function App() {
   
 const [jobList, setjobList]= useState([]);
+
 
 
 const handleJobList = (status) => {
@@ -18,14 +21,15 @@ const handleJobList = (status) => {
 
   return (
     <div className="App">
-      <h1>Welcome to job.fetch()</h1>
       <Router>
         <Route exact path='/'>
+        <h1>Welcome to job.fetch()</h1>
+          
           <JobSearchForm  handleJobList={handleJobList} />  
-          <JobList jobList={jobList}/>  
+          <JobList jobList={jobList} />  
         </Route>
         <Route path='/:id'>
-          <SearchDetails jobList={jobList} />
+          <SearchDetails jobList={jobList}/>
         </Route>
       </Router>
     </div>
