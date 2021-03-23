@@ -1,3 +1,4 @@
+import { useAuth0 } from '@auth0/auth0-react';
 import { useState } from 'react';
  
 
@@ -5,6 +6,7 @@ import { useState } from 'react';
 const JobSearchForm = ({handleJobList}) => {
     const [search, setSearch] = useState('');
     const [location, setLocation] = useState('');
+    const { user, isAuthenticated } = useAuth0();
     
     const _handleSubmit = async (e) => {
         e.preventDefault();
@@ -33,8 +35,9 @@ const JobSearchForm = ({handleJobList}) => {
 
    
         return (
+            isAuthenticated && (
         <>
-                <div>
+                <div data={user}>
                     <form onSubmit={_handleSubmit}>
                         <label>
                             <input 
@@ -57,6 +60,7 @@ const JobSearchForm = ({handleJobList}) => {
                 </div>
                 
             </>
+            ) 
         )
     }
 
