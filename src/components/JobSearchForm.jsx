@@ -1,5 +1,7 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import { useState } from 'react';
+import styled from 'styled-components'
+import React from 'react'
  
 
 
@@ -21,6 +23,16 @@ const JobSearchForm = ({handleJobList}) => {
 
     }
 
+    const Button = styled.button`
+    color: white;
+    font-size: 1em;
+    margin: 1em;
+    background:#4e90e7;
+    border: 2px solid white;
+    border-radius: 9px;
+    font-size: 14px;
+  `;
+
 
 
    const  _onLocation = (e) => {
@@ -38,16 +50,19 @@ const JobSearchForm = ({handleJobList}) => {
             isAuthenticated && (
         <>
                 <div data={user}>
-                    <form onSubmit={_handleSubmit}>
+                    <form onSubmit={_handleSubmit} style={{position: "relative", left: "25px"}}>
                         <label>
                             <input 
+                            style={{borderRadius: "9px", border: "white", position: "relative", padding: "3px"}}
                             name="searchQuery"
                             placeholder="Enter a language"
                             value={search}
                             type="text"
                             onChange={_onChange}
                             />
+                            &nbsp;
                             <input 
+                            style={{borderRadius: "9px", position: "relative", border: "white", padding: "3px"}}
                             name="location"
                             placeholder="Enter a location"
                             value={location}
@@ -55,7 +70,7 @@ const JobSearchForm = ({handleJobList}) => {
                             onChange={_onLocation}
                             />
                         </label>
-                            <button type="submit">Search</button>
+                            <Button type="submit">Search</Button>
                     </form>
                 </div>
                 

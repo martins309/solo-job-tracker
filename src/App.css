@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+   color: white;
 }
 
 .App-logo {
@@ -45,3 +46,4 @@ ul {
   height: 25px;
   width: 45px;
 }
+
